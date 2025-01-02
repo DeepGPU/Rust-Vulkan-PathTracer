@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust-Vulkan-PathTracer Goals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rust-Vulkan-PathTracer</h1>
+
+    <h2>1. 단기 목표 (2개월)</h2>
+    <p>러스트와 불칸을 베이스로 실시간 패스트레이서를 구현한다.</p>
+    <ul>
+        <li>러스트-불칸 기본 프레임 워크 구성</li>
+        <li>카메라</li>
+        <li>gltf 파싱</li>
+        <li>레이트레이싱 신 스트럭쳐</li>
+        <li>레이트레이싱 텍스쳐 스트럭쳐</li>
+        <li>GBuffer 패스, 모션벡터</li>
+        <li>ImGUI</li>
+        <li>Metallic-roughness BRDF model based on GGX</li>
+        <li>Restir DI 패스</li>
+        <li>디노이져(SVGF) 패스</li>
+        <li>For GI, Unidirectional path tracer with NEE and MIS</li>
+    </ul>
+
+    <br>
+
+    <h2>2. 장기 목표 (4개월)</h2>
+    <p>완성을 위한 마지막 단계. R&D기간 필요</p>
+    <ul>
+        <li>대규모 리팩토링</li>
+        <li>애니메이션</li>
+        <li>Restir PT 패스 <em>(used in Cyberpunk2077)</em></li>
+        <li>디노이져 개선</li>
+        <li>에디터 기능 강화</li>
+        <li>Glass/Subsurface Scattering</li>
+        <li>Clear coat</li>
+        <li>Radiance caching</li>
+    </ul>
+
+    <br>
+
+    <h2>3. 목표 렌더링 품질</h2>
+    <ul>
+        <li><a href="https://www.youtube.com/@h3r2tic" target="_blank">https://www.youtube.com/@h3r2tic</a></li>
+        <li><a href="https://www.youtube.com/@VrKomarov" target="_blank">https://www.youtube.com/@VrKomarov</a></li>
+    </ul>
+</body>
+</html>
