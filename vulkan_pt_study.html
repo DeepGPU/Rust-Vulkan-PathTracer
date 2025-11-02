@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Vulkan Pathtracer</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .phase { margin-bottom: 20px; }
+        .phase-title { font-size: 1.5em; font-weight: bold; }
+        .task-list { margin-left: 20px; }
+        .sub-task-list { margin-left: 40px; }
+        .sub-sub-task-list { margin-left: 60px; }
+        .completed { text-decoration: line-through; }
+    </style>
+</head>
+<body>
+    <h1>Realtime Vulkan Pathtracer</h1>
+
+    <div class="phase">
+        <div class="phase-title">Phase 1 (1.18~3.31)</div>
+        <ul class="task-list">
+            <li class="completed">(1.18~2.8) 불칸 기본 & 심화 익히기</li>
+            <li class="completed">(2.8~3.1) 불칸 레이트레이싱 익히기</li>
+            <li class="completed">(3.1~3.31) 불칸 레이트레이싱 실습
+                <ul class="sub-task-list">
+                    <li class="completed">normal 렌더링</li>
+                    <li class="completed">rtao(ray-traced ambient occlusion) 렌더링</li>
+                </ul>
+            </li>
+            <li><strong>Phase 2를 위한 프레임워크 만들기 (각 팀별, 진행 중)</strong></li>
+        </ul>
+    </div>
+
+    <div class="phase">
+        <div class="phase-title">Phase 2 (4.1~대략 두달)</div>
+        <ul class="task-list">
+            <li>기간은 구성원들의 수행 속도에 따라 빨라지거나 늦어질 수 있음</li>
+            <li>Monte Carlo 이론에 기반한 Light transport theory 학습
+                <ul class="sub-task-list">
+                    <li>렌더링 방적식의 수학적 의미</li>
+                    <li>확률론 & 몬테카를로 기본 이론</li>
+                    <li>몬테 카를로 적분의 unbiasness 증명하는 훈련</li>
+                </ul>
+            </li>
+            <li>패스트레이서의 대표적 기법들 구현
+                <ul class="sub-task-list">
+                    <li>Brute force (다른말로, uni-directional) 기법</li>
+                    <li>NEE(next event estimation, 다른말로 direct light sampling) 기법</li>
+                    <li>MIS(multiple importance sampling) 기법</li>
+                    <li>Metallic-roughness BRDF 모델 & 디즈니 모델</li>
+                    <li>GGX importance sampling</li>
+                    <li>Environment map importance sampling</li>
+                </ul>
+            </li>
+            <li>Large-scale 패스트레이서
+                <ul class="sub-task-list">
+                    <li>gltf 파싱</li>
+                    <li>대규모 씬 스트럭쳐 관리, 텍스쳐 관리</li>
+                    <li>애니메이션</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="phase">
+        <div class="phase-title">Phase 3</div>
+        <ul class="task-list">
+            <li>현재 최고 기술의 리얼타임 패스트레이서에 준하는 기술 R&D 및 구현
+                <ul class="sub-task-list">
+                    <li>디노이져
+                        <ul class="sub-sub-task-list">
+                            <li>SVGF (2017)</li>
+                            <li>NFOR (2016) (adopted in 언리얼 5.4)</li>
+                            <li>AI 디노이저 (네이티브 구현)
+                                <ul class="sub-sub-task-list">
+                                    <li>Recurrent Autoencoder (2017) (adopted in OptiX)</li>
+                                    <li>disney's kernel prediction (2017)</li>
+                                    <li>intel's open image denoiser</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>ReSTIR, hybrid path-tracer
+                        <ul class="sub-sub-task-list">
+                            <li>현재, 리얼타임 패스트레이서로 각광받는 기술</li>
+                            <li>Cyberpunk 2077에 구현(2023년 패치 1.62)</li>
+                            <li>ReSTIR DI (2020)</li>
+                            <li>ReSTIR GI (2021)</li>
+                            <li>ReSTIR PT (2022)</li>
+                        </ul>
+                    </li>
+                    <li>Radiance Caching 기법들</li>
+                    <li>Advanced MIS 기법들</li>
+                    <li>Gradient domain 기법들</li>
+                </ul>
+            </li>
+            <li>Advanced BRDF</li>
+            <li>Volume rendering</li>
+            <li>Subsurface rendering</li>
+        </ul>
+    </div>
+
+    <h2>소개</h2>
+    <p>1월에 본 프로젝트를 시작한 이후 현재까지 절반 정도의 인원이 남아 열정적으로 진행하고 있습니다. 약 두 달간 진행된 Phase 1에서는 Vulkan과 Vulkan Ray Tracing을 익히는 데 집중했습니다. 이어지는 Phase 2에서는 렌더링 이론과 수학적 개념을 깊이 있게 학습하며, 컴퓨터 그래픽스 렌더링의 본질을 탐구할 예정입니다. 나아가 Phase 3에서는 이전 단계에서 쌓아온 기반을 바탕으로, 최첨단 리얼타임 패스트레이서를 개발하기 위한 심화 R&D를 진행합니다.</p>
+
+    <h2>모집 관련</h2>
+    <p>Phase 1을 거치며 절반 정도의 인원이 중도 하차하였기에, Phase 2 시작 전에 새로운 인원을 충원하려 합니다. Phase 2는 Phase 1에서 학습한 Vulkan과 직접적인 관련이 없으며, 기존 프레임워크 위에서 렌더링 로직만 작성할 수 있도록 진행될 예정입니다. 프로젝트의 수준이 높은 만큼, 그래픽스 및 렌더링에 대한 깊은 열정을 가진 분들의 지원을 기다립니다.</p>
+
+    <h2>정기 모임</h2>
+    <ul>
+        <li>매주 화요일 저녁 10시 온라인 미팅</li>
+        <li>매주 토요일 오전 11시 (서울 용산) 오프라인 미팅 & 공동 작업</li>
+    </ul>
+
+    <h2>렌더러 레퍼런스</h2>
+    <ul>
+        <li><a href="https://www.youtube.com/@h3r2tic" target="_blank">https://www.youtube.com/@h3r2tic</a></li>
+        <li><a href="https://www.youtube.com/@VrKomarov" target="_blank">https://www.youtube.com/@VrKomarov</a></li>
+    </ul>
+</body>
+</html>
